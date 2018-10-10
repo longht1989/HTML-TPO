@@ -1,0 +1,8 @@
+// .category-highlight-zone
+.site-category {
+    .site-wrap {
+        &:first-child {
+            border-top: 1px solid #ddd;
+        }
+    }
+}

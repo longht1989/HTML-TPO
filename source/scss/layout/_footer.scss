@@ -1,0 +1,24 @@
+/* ====================================
+   Footer's style
+   ==================================== */
+
+#site-footer {
+    @include clearfix;
+}
+
+.site-footer {
+    padding: 20px 0;
+    .logo {
+        float: left;
+        width: 60px;
+        @include breakpoint(md) {
+            width: 100px;
+        }
+    }
+    .text {
+        float: right;
+        text-align: right;
+        color: white;
+        font-size: 14px;
+    }
+}

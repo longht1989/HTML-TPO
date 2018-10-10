@@ -1,0 +1,122 @@
+/* ====================================   Header's style   ==================================== */
+
+#site-header {
+    @include clearfix();
+    @include breakpoint(md) {
+        margin-top: 86px;
+    }
+}
+
+.site-header {
+    @include transition(all, 0.2, linear);
+    z-index: 10;
+    .site-wrap {
+        background-color: white;
+        @include breakpoint(xs) {
+            padding: 0;
+            .site-header__content {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        @include breakpoint(768px, 1023px) {
+            width: 580px;
+            padding: 0;
+            .site-header__content {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    .logo {
+        float: left;
+        height: 44px;
+        width: auto;
+        @include transition(all, 0.2, linear);
+        a {
+            height: inherit;
+        }
+        img {
+            height: inherit;
+            width: auto;
+        }
+    }
+    &__content {
+        @include clearfix;
+        position: relative;
+        padding: 12px 0;
+        @include breakpoint(md) {
+            padding: 24px 36px;
+        }
+    }
+    &__tools {
+        float: right;
+        @include clearfix();
+        margin-top: 6px;
+        li {
+            float: left;
+            &+li {
+                margin-left: 12px;
+                @include breakpoint(md) {
+                    margin-left: 48px;
+                }
+            }
+        }
+    }
+    [class^="vertical-line"] {
+        background-color: #E5E5E5;
+    }
+    .sprites-search,
+    .sprites-menu {
+        transition: all 0.2s linear;
+        cursor: pointer;
+        &.is-active {
+            opacity: 0.5;
+        }
+    }
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 10;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.2);
+        padding: 16px 23px;
+        li {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 300;
+            transition: all 0.2s linear;
+            a {
+                padding: 16px 0;
+                display: block;
+                border-bottom: 1px solid #ddd;
+                &:hover {
+                    // background-color: #e0e0e0;
+                }
+            }
+            &:last-child {
+                a {
+                    border-bottom: none;
+                }
+            }
+        }
+        @include breakpoint(md) {
+            left: 75%;
+            text-align: right;
+        }
+    }
+    &.affix {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        .site-header__content {
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+        }
+    }
+}

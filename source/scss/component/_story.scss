@@ -1,0 +1,203 @@
+/* style for story */
+
+.story {
+    @include clearfix;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out !important;
+    &__thumb {
+        overflow: hidden;
+        img {
+            @include transition(all, 0.3, ease-in-out);
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    &__header {
+        @include transition(all, 0.3, ease-in-out);
+    }
+    &__footer {
+        margin-top: 30px;
+        @include breakpoint(md) {
+            margin-top: 90px;
+        }
+    }
+    &__title {
+        font-size: 20px;
+        line-height: 1.4em;
+        font-weight: normal;
+    }
+    &__meta {
+        font-size: 12px;
+        color: #949494;
+        margin-bottom: 14px;
+    }
+    &__extend {
+        @include clearfix;
+        text-transform: uppercase;
+        font-size: 12px;
+        margin-left: 8px;
+        li {
+            float: left;
+            margin-bottom: 10px;
+            &+li {
+                margin-left: 80px;
+                @include breakpoint (md) {
+                    margin-left: 120px;
+                }
+                &+li {
+                    margin-left: 60px;
+                }
+            }
+        }
+    }
+    &--featured {
+        border-left: 6px solid #000;
+        position: relative;
+        padding: 20px 0 20px 15px;
+        left: -2px;
+        margin-bottom: 20px;
+        .story__title {
+            font-weight: 600;
+            font-size: 24px;
+            text-decoration: underline;
+            margin-bottom: 35px;
+        }
+        @include breakpoint(md) {
+            padding: 20px 0 20px 35px;
+            margin-bottom: 0;
+        }
+    }
+    &--horizontal {
+        position: relative;
+        @include breakpoint(md) {
+            left: -8px;
+            margin-bottom: 48px;
+            .story__thumb {
+                float: left;
+                margin-right: 20px;
+            }
+        }
+
+        &--right {
+            position: relative;
+            margin-bottom: 24px;
+            @include breakpoint(md) {
+                margin-left: -2px;
+                margin-right: -2px;
+                margin-bottom: 48px;
+            }
+            .story__thumb {
+                @include breakpoint(md) {
+                    float: right;
+                    margin-right: 0;
+                    margin-left: 60px;
+                }
+                a {
+                    position: relative;
+                    display: block;
+                    &::after {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                        display: block;
+                        content: '';
+                        background-color: black;
+                        opacity: 0.7;
+                    }
+                }
+            }
+            .story__title {
+                font-size: 24px;
+                line-height: 1.4;
+                text-decoration: underline;
+                font-weight: 600;
+                margin-bottom: 40px;
+                padding: 0 8px;
+                @include breakpoint(md) {
+                    padding: 0;
+                }
+            }
+            .story__desc,
+            .story__title {
+                overflow: hidden;
+            }
+            .story__desc {
+                padding: 8px;
+                font-size: 20px;
+                line-height: 1.4;
+                @include breakpoint (md) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+    &--prev {
+        padding-top: 15px;
+        border-top: 4px solid #000;
+        .story__meta {
+            text-align: right;
+            font-size: 14px;
+        }
+        .story__title {
+            font-size: 18px;
+            line-height: 1.4;
+            font-weight: 600;
+            text-align: right;
+        }
+    }
+    &--next {
+        padding-top: 15px;
+        border-top: 4px solid #000;
+        .story__title {
+            font-size: 18px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+    }
+}
+
+.card {
+    &-wrap {
+        @include clearfix;
+        border: 1px solid #ddd;
+    }
+    &__row {}
+    &__item {
+        vertical-align: middle;
+        padding: 32px 0;
+        width: 50%;
+        float: left;
+        box-shadow: 0 0 0 1px #ddd;
+        transition: box-shadow 0.2s ease,
+        transform 0.2s ease;
+        overflow: hidden;
+        background: white;
+        &:hover {
+            box-shadow: 0 8px 50px rgba(#000, 0.2);
+            transform: scale(1.05);
+        }
+        @include breakpoint(md) {
+            width: 33.33%;
+        }
+    }
+    &__image {
+        width: 98px;
+        height: 98px;
+        border-radius: 100%;
+        margin: 0 auto 20px;
+        overflow: hidden;
+    }
+    &__title {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+    &__desc {
+        text-align: center;
+    }
+}

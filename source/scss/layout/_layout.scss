@@ -1,0 +1,239 @@
+#site-content {
+    @include clearfix;
+}
+
+.site-index {}
+
+.site-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    @include clearfix();
+    @include breakpoint(sm) {
+        max-width: 600px;
+    }
+    @include breakpoint(1024px, 1199px) {
+        max-width: 1000px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @include breakpoint(1200px) {
+        max-width: 1140px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+// vertical line
+[class^="vertical-line"] {
+    width: 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.vertical-line {
+    &-2 {
+        left: 16.67%;
+    }
+    &-4 {
+        left: 33.34%;
+    }
+    &-6 {
+        left: 50%;
+    }
+}
+
+.lines-group {
+    display: none;
+    @include breakpoint(md) {
+        display: block;
+    }
+}
+
+//index layout
+.zone {
+    &--news {
+        .zone__content {
+            .story {
+                @include breakpoint(sm) {
+                    width: 50%;
+                    float: left;
+                }
+            }
+        }
+    }
+}
+
+.area {
+    &--video {
+        .area__content {
+            .story {
+                @include breakpoint(sm) {
+                    width: 50%;
+                    float: left;
+                    &:nth-child(2n) {
+                        border-left: 1px solid #E5E5E5;
+                    }
+                }
+                @include breakpoint(sm) {
+                    width: 25%;
+                    &+.story {
+                        border-left: 1px solid #E5E5E5;
+                    }
+                }
+            }
+        }
+    }
+    &--featured {
+        .story {
+            @include breakpoint(sm) {
+                width: 50%;
+                float: left;
+                &:nth-child(2n) {
+                    border-left: 1px solid #E5E5E5;
+                }
+            }
+            @include breakpoint(sm) {
+                width: 25%;
+                &+.story {
+                    border-left: 1px solid #E5E5E5;
+                }
+            }
+        }
+    }
+    &__grid {
+        li {
+            display: block;
+            padding: 60px 20px;
+            @include breakpoint(sm) {
+                display: inline-block;
+                padding: 120px 40px;
+                width: 33.33%;
+            }
+        }
+    }
+    &__footer {
+        .two-cols-md {
+            >* {
+                margin: 20px 0;
+            }
+        }
+    }
+}
+
+.slider {
+    &-wrap {
+        margin: 0 auto;
+        width: 80%;
+        @include breakpoint(sm) {
+            width: 55%;
+        }
+    }
+}
+
+// what we do layout
+.member {
+    &-wrap {
+        font-size: 0;
+        @include breakpoint(sm) {
+            width: 80%;
+            margin: 0 auto;
+        }
+        @include breakpoint(md) {
+            width: 50%;
+        }
+        .member {
+            width: 50%;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 64px;
+            padding: 0 24px;
+        }
+    }
+}
+
+// contact page
+.site-contact {
+    .zone {
+        @include breakpoint(md) {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+// footer layout
+.site-footer {
+    &__logo {
+        margin-bottom: 64px;
+        @include breakpoint(sm) {
+            width: 33.33%;
+            float: left;
+            margin-bottom: 0;
+        }
+    }
+    &__info {
+        @include breakpoint(sm) {
+            width: 66.67%;
+            float: right;
+        }
+    }
+}
+
+&.two-cols {
+    @include clearfix;
+    font-size: 0;
+    margin-left: -8px;
+    margin-right: -8px;
+    >* {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 8px;
+    }
+    &-sm {
+        @include breakpoint(sm) {
+            @include clearfix;
+            font-size: 0;
+            margin-left: -8px;
+            margin-right: -8px;
+            >* {
+                width: 50%;
+                display: inline-block;
+                vertical-align: top;
+                padding: 0 8px;
+            }
+        }
+    }
+    &-md {
+        @include breakpoint(md) {
+            @include clearfix;
+            font-size: 0;
+            margin-left: -8px;
+            margin-right: -8px;
+            >* {
+                width: 50%;
+                display: inline-block;
+                vertical-align: top;
+                padding: 0 8px;
+            }
+        }
+    }
+}
+
+&.four-cols {
+    @include clearfix;
+    font-size: 0;
+    margin-left: -8px;
+    margin-right: -8px;
+    >* {
+        width: 25%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 8px;
+    }
+}

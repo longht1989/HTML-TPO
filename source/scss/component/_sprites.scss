@@ -1,0 +1,25 @@
+// icon sprites
+[class^="sprites"] {
+    display: inline-block;
+    background: url('../img/Sprites.svg');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.sprites {
+    &-search {
+        width: 32px;
+        height: 32px;
+        background-position: 0 0;
+    }
+    &-user {
+        width: 32px;
+        height: 32px;
+        background-position: -50px 0;
+    }
+    &-menu {
+        width: 32px;
+        height: 32px;
+        background-position: -100px 0;
+    }
+}

@@ -1,0 +1,169 @@
+/* button border  */
+
+.btn {
+    font-size: 14px; // -webkit-border-radius: 0px;
+    // -moz-border-radius: 0px;
+    // -ms-border-radius: 0px;
+    // -o-border-radius: 0px;
+    // border-radius: 0px;
+    @include transition(background-color, 0.2, ease-out);
+    .fa {
+        margin-right: 5px;
+    }
+    &:active:focus,
+    &:focus:active {
+        outline: none;
+    }
+    @include haf {
+        outline: none;
+    }
+    &-default {
+        border: none;
+        &:hover,
+        &:active,
+        &:focus {
+            border: none;
+        }
+    }
+    &-round {
+        border-radius: 30px;
+    }
+    &-circle {
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 32px;
+        padding: 0;
+        .fa {
+            margin-right: 0;
+        }
+    }
+}
+
+.btn-border {
+    border: 1px solid #333;
+    background-color: transparent;
+    color: #333;
+    @include transition(all, 0.2, linear);
+    &:hover {
+        background-color: $brand-primary;
+        color: white;
+        border-color: $brand-primary;
+    }
+    &.btn-primary {
+        color: $brand-primary;
+        border: 1px solid $brand-primary;
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.btn-special {
+    color: $brand-primary;
+    border: 2px solid $brand-primary;
+    background: black;
+    &:hover,
+    &:active,
+    &:focus {
+        background: #fff;
+        color: $brand-primary;
+    }
+}
+
+.form-control {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    &:focus {
+        border-color: darken($brand-primary, 15%);
+    }
+    &.form-round {
+        border-radius: 30px;
+    }
+}
+
+
+// load more
+.load-more {
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #999;
+    text-align: center;
+    [class^="icon"] {
+        margin-right: 4px;
+        width: 14px;
+        height: 14px;
+        fill: #999;
+        vertical-align: text-bottom;
+    }
+}
+
+// animated form
+.form {
+    display: block;
+    padding-top: 20px;
+    text-align: left;
+    font-weight: normal;
+    padding: 0 8px;
+    margin-bottom: 15px;
+    @include breakpoint(md) {
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .label-text {
+        cursor: text;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        transform: translateY(-34px);
+        transition: all 0.3s;
+        text-align: left;
+    }
+    textarea {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid #000;
+        font-size: 16px;
+        line-height: 1;
+        width: 100%;
+        text-transform: uppercase;
+        &:focus {
+            outline: none;
+        }
+    }
+    &:focus {
+        &+.label-text {
+            font-size: 12px;
+            transform: translateY(-56px);
+        }
+        &:valid+.label-text {
+            font-size: 12px;
+            transform: translateY(-56px)
+        }
+    }
+    input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid #000;
+        font-size: 16px;
+        line-height: 37px;
+        outline: 0;
+        transition: all 0.3s;
+        width: 100%;
+        &:focus {
+            width: 100%;
+            &+.label-text {
+                font-size: 12px;
+                transform: translateY(-56px);
+            }
+        }
+        &:valid+.label-text {
+            font-size: 12px;
+            transform: translateY(-56px);
+        }
+    }
+}
