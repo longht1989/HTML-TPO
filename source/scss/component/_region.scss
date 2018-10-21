@@ -142,7 +142,10 @@
 .cover {
     @include clearfix();
     position: relative;
-    background: url('../img/cover_bg.png') left top no-repeat;
+    background: url('../img/cover_bg.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     &::after {
@@ -400,7 +403,11 @@
             top: 0;
             left: 0px;
             content: '';
-            background: url("https://source.unsplash.com/random/1140x641?sig=0") left top no-repeat;
+            background: url("https://source.unsplash.com/random/1140x641?sig=0");
+            background-attachment: fixed;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
             opacity: 0.8;
             z-index: 0;
         }

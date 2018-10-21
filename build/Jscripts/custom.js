@@ -30,15 +30,24 @@ $(function() {
     });
     // aminate fade in index section
     window.sr = ScrollReveal({ reset: true });
-    sr.reveal('.foo');
+    ScrollReveal({ distance: '90px' });
+    sr.reveal('.smooth', { easing: 'ease-in' });
+    sr.reveal('.sr-left', { origin: 'left' });
+    sr.reveal('.sr-top', { origin: 'top' });
+    sr.reveal('.sr-right', { origin: 'right' });
+    sr.reveal('.sr-bottom', { origin: 'bottom' });
     // hover action video featured
     var videosource = $(".cover__listing li").attr('data-video');
-    $(".cover__listing li").click(
+    $(".cover__listing li").hover(
         function() {
             var videosource = $(this).attr('data-video');
             $('.bg-video').replaceWith('<div class="bg-video"><video id="video_background" preload="auto" autoplay="true" loop="loop" muted="" volume="0"><source src="' + videosource + '.webm" type="video/webm" /><source src="' + videosource + '.ogv" type="ogg ogv" ; codecs="theora, vorbis" /><source src="' + videosource + '.mp4" type="video/mp4"></video></div>');
             $('.bg-mask').css("opacity", "0.5");
             $(".bg-video").css('opacity', 0).animate({ opacity: 1 }, 1000);
+        },
+        function() {
+            $('.bg-video').replaceWith('<div class="bg-video"></div>');
+            $('.bg-mask').css("opacity", "0.9");
         });
     //scroll animated
     $(".cover__listing li a").click(function() {
