@@ -30,7 +30,7 @@ $(function() {
     });
     // aminate fade in index section
     window.sr = ScrollReveal({ reset: true });
-    ScrollReveal({ distance: '90px' });
+    // ScrollReveal({ distance: '90px' });
     sr.reveal('.smooth', { easing: 'ease-in' });
     sr.reveal('.sr-left', { origin: 'left' });
     sr.reveal('.sr-top', { origin: 'top' });
