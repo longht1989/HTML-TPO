@@ -42,8 +42,8 @@ $(function() {
         function() {
             var videosource = $(this).attr('data-video');
             $('.bg-video').replaceWith('<div class="bg-video"><video id="video_background" preload="auto" autoplay="true" loop="loop" muted="" volume="0"><source src="' + videosource + '.webm" type="video/webm" /><source src="' + videosource + '.ogv" type="ogg ogv" ; codecs="theora, vorbis" /><source src="' + videosource + '.mp4" type="video/mp4"></video></div>');
-            $('.bg-mask').css("opacity", "0.5");
-            $(".bg-video").css('opacity', 0).animate({ opacity: 1 }, 1000);
+            $('.bg-mask').css("opacity", "0.2");
+            $(".bg-video").css('opacity', 0).animate({ opacity: 1 }, 500);
         },
         function() {
             $('.bg-video').replaceWith('<div class="bg-video"></div>');
